@@ -1,16 +1,23 @@
 import React from 'react'
-import { v4 as uuidv4 } from 'uuid';
+
+import { useState } from 'react';
+
 export default function CardData({datas}) {
 
   // SUPPRIMER
-
+  const [deleteValue,setDeleteValue] = useState(datas);
+  
+  function handleDelete(uniqueIdToDelete){
+    // setDeleteValue(deleteValue.filter(item => item.uniqueId !== uniqueIdToDelete));
+  }
   return (
     <>
     {/* AFFICHER TOUS LES ELEMENTS DU TABLEAU AINSI QUE LE BOUTON MODIFIER ET SUPPRIMER  */}
         <ul>
             {datas.map(
               data=>
-                <li key={uuidv4()}>{data} <button>Modifier</button> <button>Supprimer</button> </li>
+                <li key={data}>{data} <button>Modifier</button> <button onClick={handleDelete}>Supprimer</button> <button onClick={handleUnique}> Unikque</button> </li>
+               
               )}
         </ul>
     </>

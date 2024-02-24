@@ -36,4 +36,8 @@
 2. Impport du package 
 ````
     import { v4 as uuidv4 } from 'uuid';
+    // Fonction pour supprimer 
+  // function handleDelete(uniqueIdToDelete){
+  //   setDeleteValue(deleteValue.filter(item => item.uniqueId !== uniqueIdToDelete));
+  // }
 ````
