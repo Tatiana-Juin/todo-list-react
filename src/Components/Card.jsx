@@ -6,9 +6,10 @@ export default function CardData({datas}) {
 
   // SUPPRIMER
   const [deleteValue,setDeleteValue] = useState(datas);
+
   
-  function handleDelete(uniqueIdToDelete){
-    // setDeleteValue(deleteValue.filter(item => item.uniqueId !== uniqueIdToDelete));
+  function handleDelete(){
+    // POUR SUPPRIMER UNE VALEUR 
   }
   return (
     <>
