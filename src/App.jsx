@@ -16,13 +16,18 @@ function App() {
     function handleValue(e){
       setDataValue(e.target.value);
     }
+    
     // Ajout dans le tableau de la valeur récupérer
     function handleTask(e){
       e.preventDefault();
-      // Ajouter une valeur au tableau
-      setTasks([...tasks,dataValue]);
+      // Pour afficher la valeur du card quand c'est different de vide 
+      if(dataValue.trim() !=""){
+        // Ajouter une valeur au tableau
+        setTasks([...tasks,dataValue]);
       // Initialiser la valeur dans le bouton input ( champs de texte )
-      setDataValue('');
+        setDataValue('');
+      }
+      
     }
 
     return (
@@ -35,6 +40,7 @@ function App() {
 
         {/* APPELLE DU COMPOSANT CardData  */}
         <CardData datas={tasks} />
+        
       </>
     )
 }
