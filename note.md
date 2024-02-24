@@ -22,3 +22,18 @@
 ### Bouton supprimer 
 - Récupérer la valeur et l'index
 - Puis on le supprimer  
+
+# uuid 
+## c'est quoi ?
+- Ce package permet de générer des clés uniques 
+
+## Comment utiliser 
+1. Installation du package 
+
+````
+    npm install uuid 
+````
+2. Impport du package 
+````
+    import { v4 as uuidv4 } from 'uuid';
+````
