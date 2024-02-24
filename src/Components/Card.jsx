@@ -16,7 +16,7 @@ export default function CardData({datas}) {
         <ul>
             {datas.map(
               data=>
-                <li key={data}>{data} <button>Modifier</button> <button onClick={handleDelete}>Supprimer</button> <button onClick={handleUnique}> Unikque</button> </li>
+                <li key={data}>{data} <button>Modifier</button> <button onClick={handleDelete}>Supprimer</button>  </li>
                
               )}
         </ul>
