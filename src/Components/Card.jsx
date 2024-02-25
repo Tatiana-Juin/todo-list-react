@@ -19,7 +19,7 @@ export default function CardData({datas}) {
               data=>
                 <li key={data.id}>{data.name} 
                   <button>Modifier</button> 
-                  {/* <button onClick={() => {setDeleteTask(deleteTask.filter(a =>a.id !== data.id))}}>Supprimer</button>   */}
+                  <button onClick={() => {setDeleteTask(deleteTask.filter(a =>a.id !== data.id))}}>Supprimer</button>  
                   {/* <button onClick={() => handleDeleteTask(data.id) }>Supprimer</button>   */}
                 </li>
                

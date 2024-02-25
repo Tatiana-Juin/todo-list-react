@@ -13,6 +13,7 @@ function App() {
     const [dataValue,setDataValue] = useState('');
     // Pour ajouter la tache au tableau
     const [tasks,setTasks] = useState([]);
+    // Pour afficher les tasks 
     const [mounted, setMounted] = useState(false);
 
     // Function pour récupérer la valeur saisie 

@@ -111,3 +111,12 @@ Cela renvoie **3 tableau dans le console.log**
     }, [tasks, mounted]);
     ````
    tasks.length > 0 ==> pour que le tableau  ne soit pas vide 
+
+   ## Pourquoi avoir utiliser useEffect()
+   Dans votre cas, vous utilisez useEffect pour afficher le contenu de tasks dans la console après chaque mise à jour de tasks. Cela permet de suivre les changements dans tasks et de voir son contenu mis à jour dans la console. 
+
+    1.  Le premier argument de useEffect est une fonction qui contient le code que vous souhaitez exécuter après le rendu du composant. Dans ce cas, cette fonction contient console.log(tasks).
+
+    2. Le deuxième argument de useEffect est un tableau de dépendances. L'effet sera réexécuté chaque fois que l'une de ces dépendances change. Dans votre cas, l'effet est déclenché chaque fois que tasks ou mounted change.
+
+    3. À l'intérieur de la fonction de l'effet, vous vérifiez si le composant est monté (mounted) et si tasks n'est pas vide avant d'afficher le contenu de tasks dans la console. Cela évite d'afficher un tableau vide lors du premier rendu, car tasks est initialisé à un tableau vide.
