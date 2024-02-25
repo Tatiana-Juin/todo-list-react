@@ -23,3 +23,91 @@
 - Récupérer la valeur et l'index
 - Puis on le supprimer  
 
+# Problème rencontrer
+## App.jsx - Récuperer la valeur 
+
+- Quand je saisie **une première tache** => console log avec un **tableau vide** . Quand tu **saisie une 2eme tache** => console log renvoie un **tableau avec la valeur prècèdente**.
+
+- **CAUSE**
+- problème de **mise a jours de l'état** tasks 
+- **SOLUTION**
+- Pour exécuter une action après la mise à jour de l'état avec useState, nous devons utiliser useEffect
+
+````
+    function handleTask(e){
+      e.preventDefault();
+      
+      if(dataValue.trim() !== ""){
+        setTasks(prevTasks => [
+          ...prevTasks,
+          {id: nextId++, name: dataValue}
+        ]);
+        setDataValue('');
+      }
+    }
+
+    useEffect(() => {
+      console.log(tasks); // S'exécute après chaque mise à jour de tasks
+    }, [tasks]);
+````
+
+- **PROBLEME** \
+Cela renvoie **3 tableau dans le console.log** 
+- **Cause** \
+    Le problème avec votre code réside dans le fait que console.log(tasks) dans l'effet useEffect est déclenché **chaque fois que tasks est mis à jour**, y compris lors **du rendu initial**. C'est pourquoi vous voyez trois tableaux vides lorsque vous saisissez une valeur. 
+
+    Pour résoudre ce problème, vous pouvez utiliser un **état supplémentaire** pour garder une trace du moment où le composant est monté, et n'exécuter console.log(tasks) que lorsque le **composant est monté** et que **tasks a été mis à jour**. 
+    
+    ````  
+    let nextId=0;  
+        const [mounted, setMounted] = useState(false);
+
+    function handleValue(e){
+      setDataValue(e.target.value);
+    }
+    
+    function handleTask(e){
+      e.preventDefault();
+      
+      if(dataValue.trim() !== ""){
+        setTasks(tasks => [
+          ...tasks,
+          {id: nextId++, name: dataValue}
+        ]);
+        setDataValue('');
+      }
+    }
+
+    useEffect(() => {
+      if (mounted) {
+        console.log(tasks); // S'exécute après chaque mise à jour de tasks
+      } else {
+        setMounted(true);
+      }
+    }, [tasks, mounted]);
+
+    ````
+- **PB** => affiche 2 tableau dont le premier  vide et le id pour la key passe de 1 a 3
+
+    - **cause et solution pour le key**
+    On met un **id = 1** puis on ajoute **1 avant de creer la nouvelle tache** c'est pour cela que ca s'increment en 2\
+    **SOLUTION** 
+    ````
+        setTasks(tasks => [
+          ...tasks,
+          {id: tasks.length+1, name: dataValue}
+        ]);
+    ````
+    Récupere la taille du tableau et on ajoute 1  donc on part de 1 et non 0 
+
+    - **cause et solution - 2 tableau**
+    ````    
+        useEffect(() => {
+      if (mounted && tasks.length > 0) { // Vérifie si le composant est monté et si tasks n'est pas vide
+        console.log(tasks); // S'exécute après chaque mise à jour de tasks
+      } else {
+        setMounted(true);
+      }
+    }, [tasks, mounted]);
+    ````
+   tasks.length > 0 ==> pour que le tableau  ne soit pas vide 

@@ -36,8 +36,8 @@ function App() {
         //   {id:nextId++,name:dataValue}
         // ]);
         
-        setTasks(prevTasks => [
-          ...prevTasks,
+        setTasks(tasks => [
+          ...tasks,
           {id: tasks.length+1, name: dataValue}
         ]);
 
