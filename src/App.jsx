@@ -62,6 +62,11 @@ function App() {
         setMounted(true);
       }
     }, [tasks, mounted]);
+
+    const handleDeleteTask = (id) => {
+      const updatedTasks = tasks.filter(task => task.id !== id);
+      setTasks(updatedTasks);
+  };
     
 
     return (
@@ -73,7 +78,7 @@ function App() {
         </form>
         
         {/* APPELLE DU COMPOSANT CardData  */}
-        <CardData datas={tasks} />
+        <CardData datas={tasks} onDeleteTask={handleDeleteTask}/>
         
       </>
     )
