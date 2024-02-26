@@ -5,17 +5,13 @@ import CardData from './Components/Card'
 
 import './App.css'
 
-// variable pour que les key de la liste soit unique 
-// let nextId=0;
-
 function App() {
     //Pour récupérer la valeur 
     const [dataValue,setDataValue] = useState('');
     // Pour ajouter la tache au tableau
     const [tasks,setTasks] = useState([]);
     // Pour afficher les tasks 
-    const [mounted, setMounted] = useState(false);
-
+ 
     // Function pour récupérer la valeur saisie 
     function handleValue(e){
       setDataValue(e.target.value);
@@ -24,51 +20,23 @@ function App() {
     // Ajout dans le tableau de la valeur récupérer
     function handleTask(e){
       e.preventDefault();
-      // Pour afficher la valeur du card quand c'est different de vide 
-      
+      // Pour inserer dans le tableau la valeur saisie si elle n'est pas vide 
       if(dataValue.trim() !=""){
         // Ajouter une valeur au tableau
-        /* 
-          Quand on saisie une valeur dans le input cela n'affiche pas directement 
-          il faut saisie une valeur pour afficher la précédente 
-        */
-        // setTasks([
-        //   ...tasks,
-        //   {id:nextId++,name:dataValue}
-        // ]);
-        
         setTasks(tasks => [
           ...tasks,
           {id: tasks.length+1, name: dataValue}
         ]);
-
-        // setTimeout(() => {
-        //   console.log(tasks);
-        // });
-        // console.log(tasks);
-       
-        
-        // console.log(tasks.name);
-      // Initialiser la valeur dans le bouton input ( champs de texte )
-        setDataValue('');
+        // setDataValue('');
       }
-      
+     
     }
-
-    useEffect(() => {
-      if (mounted && tasks.length > 0) {
-        console.log(tasks); // S'exécute après chaque mise à jour de tasks
-      } else {
-        setMounted(true);
-      }
-    }, [tasks, mounted]);
-
+    // Fonction pour supprimer une tache 
     const handleDeleteTask = (id) => {
       const updatedTasks = tasks.filter(task => task.id !== id);
       setTasks(updatedTasks);
   };
     
-
     return (
       <>
         {/* POUR AFFICHER LE FORMULAIRE */}
@@ -77,7 +45,7 @@ function App() {
             <button onClick={handleTask}>Envoyer</button>
         </form>
         
-        {/* APPELLE DU COMPOSANT CardData  */}
+        {/* Appelle du composant CardData avec différents props */}
         <CardData datas={tasks} onDeleteTask={handleDeleteTask}/>
         
       </>
