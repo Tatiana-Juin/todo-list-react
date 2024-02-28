@@ -49,6 +49,11 @@ function App() {
 
   }
 
+  // Fonction pour modifier la tache et l'ajouter au tableau 
+  const handleTaskModify = () =>{
+    
+  }
+
     return (
       <>
       {/* Titre de la page  */}

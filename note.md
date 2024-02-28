@@ -21,8 +21,19 @@
 
 #### Comment ? 
 - **Récupérer id** de la tache 
-- **Récupérer la nouvelle valeur** qui à était saisie 
+- **Récupérer la nouvelle valeur** qui à était saisie et inserer dans le tableau 
+**ALGO** \
+var updatedTask = tasks.map(task => {\
+  si (task.id === taskId){\
+      retourner (...task, name : taskNameEditing);\
+  }\
+})\
+setTaskNameEditing(updatedTask);\
+setTaskId(null)
+
 - Pour **afficher** le **input** il va faloir faire une condition 
+
+
 
 ### Bouton supprimer 
 - Récupérer la valeur et l'index
