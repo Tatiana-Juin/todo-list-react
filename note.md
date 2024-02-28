@@ -19,6 +19,11 @@
 - Quand on click sur modifier on voie apparaitre **la nouvelle valeur** (**Condition ternaire** avec un boolean pour savoir si il a le champs input qui est présent - si faux alors nouvelle valeurs sinon boolean est true donc on ne voie pas la nouvelle valeur)
 - Utilise les **useState()**
 
+#### Comment ? 
+- **Récupérer id** de la tache 
+- **Récupérer la nouvelle valeur** qui à était saisie 
+- Pour **afficher** le **input** il va faloir faire une condition 
+
 ### Bouton supprimer 
 - Récupérer la valeur et l'index
 - Puis on le supprimer  
