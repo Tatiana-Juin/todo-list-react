@@ -39,6 +39,7 @@ function App() {
     
     return (
       <>
+        <h1>Todo list </h1>
         {/* POUR AFFICHER LE FORMULAIRE */}
         <form >
             <input type="text" onChange={handleValue}  />
