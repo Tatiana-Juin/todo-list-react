@@ -79,10 +79,15 @@ function App() {
         <CardData 
           datas={tasks} 
           onDeleteTask={handleDeleteTask}
+          // props => fonction pour recupérer les valeurs de la taches 
           handleEdtingTask={handleEdtingTask}
+          // props => fonction pour ajouter la valeur modifier au tableau
           handleTaskModify = {handleTaskModify}
+          // props => recupére id
           taskId = {taskId}
+          // props => recupérerle nom de la tache  
           taskNameEditing = {taskNameEditing}
+          // props => pour modifier le nom de la tache grace au useState()
           setTaskNameEditing = {setTaskNameEditing}
 
         />
