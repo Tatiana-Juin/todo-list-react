@@ -3,7 +3,7 @@ import viteLogo from '/vite.svg'
 
 import CardData from './Components/Card'
 
-import './App.css'
+
 
 function App() {
     //Pour récupérer la valeur 
