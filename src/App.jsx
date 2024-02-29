@@ -51,7 +51,18 @@ function App() {
 
   // Fonction pour modifier la tache et l'ajouter au tableau 
   const handleTaskModify = () =>{
-    
+    var updatedTask = tasks.map(
+      task =>{
+        // verifie que id de la tache correspond a id recupérer
+        if(task.id === taskId){
+          return {...task,name : taskNameEditing};
+        }
+        return task;
+      }
+    )
+    // initialiser setTaskNameEditing et setTaskId 
+    setTaskNameEditing(updatedTask);
+    setTaskId(null);
   }
 
     return (

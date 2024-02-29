@@ -25,8 +25,9 @@
 **ALGO** \
 var updatedTask = tasks.map(task => {\
   si (task.id === taskId){\
-      retourner (...task, name : taskNameEditing);\
+      retourner {...task, name : taskNameEditing};\
   }\
+  return task
 })\
 setTaskNameEditing(updatedTask);\
 setTaskId(null)
