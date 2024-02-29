@@ -10,10 +10,25 @@ export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTa
         <ul>
             {datas.map(
               data=>
-                <li key={data.id}>{data.name} 
-                  <button>Modifier</button> 
-                  <button onClick={() => onDeleteTask(data.id)}>Supprimer</button>
-                </li>
+              <li key={data.id}>
+                {/* condition pour l'apparition du input et des bouton modifier et supprimer */}
+                {taskId === data.id ? (
+                  <>
+                    <input type="text" value={taskNameEditing} onChange={(e) => setTaskNameEditing(e.target.value) } />
+                    <button>Modifier</button>
+                  </>
+                ) : (
+                  <>
+                    {data.name} 
+                    <button onClick={() => handleEdtingTask(data.id,data.name) }>Modifier</button> 
+                    <button onClick={() => onDeleteTask(data.id)}>Supprimer</button>
+                  </>
+                  
+                )}
+
+
+              </li>
+
                
               )}
         </ul>
