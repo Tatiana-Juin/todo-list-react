@@ -76,7 +76,16 @@ function App() {
         </form>
         
         {/* Appelle du composant CardData avec différents props */}
-        <CardData datas={tasks} onDeleteTask={handleDeleteTask}/>
+        <CardData 
+          datas={tasks} 
+          onDeleteTask={handleDeleteTask}
+          handleEdtingTask={handleEdtingTask}
+          handleTaskModify = {handleTaskModify}
+          taskId = {taskId}
+          taskNameEditing = {taskNameEditing}
+          setTaskNameEditing = {setTaskNameEditing}
+
+        />
         
       </>
     )

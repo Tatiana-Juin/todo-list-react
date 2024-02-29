@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useState } from 'react';
 
-export default function CardData({datas, onDeleteTask}) {
+export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTaskModify,taskId,taskNameEditing,setTaskNameEditing}) {
  
   return (
     <>
