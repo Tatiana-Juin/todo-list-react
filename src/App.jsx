@@ -60,8 +60,8 @@ function App() {
         return task;
       }
     )
-    // initialiser setTaskNameEditing et setTaskId 
-    setTaskNameEditing(updatedTask);
+    // Modification dans le tableau de la tache grâce a setTasks et initialisation de taskId a null
+    setTasks(updatedTask);
     setTaskId(null);
   }
 
