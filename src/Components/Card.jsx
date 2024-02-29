@@ -19,7 +19,7 @@ export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTa
                   <>
                     {/* Apparition de input avec la valeur actuel et le bouton pour enregistrer les modification */}
                     <input type="text" value={taskNameEditing} onChange={(e) => setTaskNameEditing(e.target.value) } />
-                    <button onClick={() => handleTaskModify(data.id)}>Modifier</button>
+                    <button onClick={() => handleTaskModify()}>Modifier</button>
                   </>
                 ) : (  // sinon
                   <>
