@@ -72,7 +72,7 @@ function App() {
         {/* Pour afficher le formulaire */}
         <form >
             <input type="text" onChange={handleValue}  />
-            <button onClick={handleTask}>Envoyer</button>
+            <button onClick={handleTask}>Ajouter une tache</button>
         </form>
         
         {/* Appelle du composant CardData avec différents props */}

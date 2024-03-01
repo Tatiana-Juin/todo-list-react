@@ -4,16 +4,47 @@
   padding: 0;
 }
 
+/* Div principale */
 #root{
   /* background-color: blue; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* border: 1px solid blue; */
 }
 
+/* Style du titre */
 h1{
-  margin:20px 20px;
+  margin-top:40px ;
   font-size: 48px;
   color: purple;
+}
+
+/* Style du formulaire */
+#root form{
+  margin-top:20px;
+}
+
+#root form input{
+  margin-right: 5px;
+  /* width: 255px; */
+  height:28px;
+  font-size: 18px;
+  
+}
+
+#root form button{
+  border: 1px solid pink;
+  background-color: pink;
+  padding:8px;
+  /* color: white;
+  font-weight: bolder; */
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#root ul li{
+  list-style: none;
+  
 }
