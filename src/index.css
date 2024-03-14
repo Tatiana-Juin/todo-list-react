@@ -9,7 +9,6 @@
   /* background-color: blue; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   /* border: 1px solid blue; */
 }
@@ -44,12 +43,14 @@ h1{
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+/* STYLE DE LA TACHE  */
 #root ul li{
   list-style: none;
   /* border:1px solid blue; */
   margin-top: 15px;
+  font-size:20px;
 }
-
+/* STYLE DES BOUTON POUR MODIFIER ET SUPPRIMER */
 #root ul li button{
   /* border:1px solid red; */
   margin-left:15px;
