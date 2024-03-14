@@ -34,7 +34,7 @@ h1{
   
 }
 
-#root form button{
+#root form button, #root ul li button{
   border: 1px solid pink;
   background-color: pink;
   padding:8px;
@@ -46,5 +46,11 @@ h1{
 
 #root ul li{
   list-style: none;
-  
+  /* border:1px solid blue; */
+  margin-top: 15px;
+}
+
+#root ul li button{
+  /* border:1px solid red; */
+  margin-left:15px;
 }
