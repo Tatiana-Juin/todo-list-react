@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTaskModify,taskId,taskNameEditing,setTaskNameEditing}) {
  
   return (
-    <>
+    <div className='task'>
     {/* Afficher tous les élements du tableau ainsi que le bouton modifier et supprimer */}
         <ul>
             {datas.map(
@@ -37,6 +37,6 @@ export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTa
                
               )}
         </ul>
-    </>
+    </div>
   )
 }
