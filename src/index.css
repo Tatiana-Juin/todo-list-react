@@ -45,7 +45,7 @@ h1{
 }
 
 /* STYLE DES TACHES  */
-.task{
+.tasks{
   /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
@@ -60,6 +60,7 @@ h1{
   margin-top: 15px;
   font-size:20px;
 }
+
 /* STYLE DES BOUTON POUR MODIFIER ET SUPPRIMER */
 #root ul li button{
   /* border:1px solid red; */
