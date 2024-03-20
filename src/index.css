@@ -57,7 +57,7 @@ h1{
 /* STYLE DE LA TACHE  */
 #root ul li{
   list-style: none;
-  border:1px solid blue;
+  /* border:1px solid blue; */
   margin-top: 15px;
   font-size:20px;
 }
