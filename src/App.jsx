@@ -55,7 +55,14 @@ function App() {
       task =>{
         // verifie que id de la tache correspond a id recupérer
         if(task.id === taskId){
-          return {...task,name : taskNameEditing};
+          // verifie que le champs de pour modifier la tache n'est pas vide 
+          if(taskNameEditing.trim() !== ""){
+            return {...task, name: taskNameEditing};
+          } else {
+            // si le champs est vide alors affiche un message
+            alert("erreur . Vous devais saisir un nom de tache et non l'essaie le champs libre quand vous modifiez une tache.");
+          }
+          
         }
         return task;
       }

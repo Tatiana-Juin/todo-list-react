@@ -80,7 +80,7 @@ h1{
 
 /* **********************RESPONSIVE*********************************** */
 /* PETIT ECRAN */
-@media screen and (min-width:354px) and (max-width:800px){
+@media screen and (min-width:359px) and (max-width:800px){
     
   /* POUR LES TACHE  */
     .tasks{
