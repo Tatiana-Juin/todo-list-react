@@ -47,7 +47,7 @@ h1{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width:17vw;
+  width:25vw;
 }
 
 /* UNE TACHE  */
@@ -78,7 +78,8 @@ h1{
   margin-top: 5px;
 }
 
-/* RESPONSIVE */
+/* **********************RESPONSIVE*********************************** */
+/* PETIT ECRAN */
 @media screen and (min-width:354px) and (max-width:800px){
     
   /* POUR LES TACHE  */
@@ -96,7 +97,7 @@ h1{
     }
 
 }
-
+/* MOYEN ECRAN */
 @media screen and (min-width:801px) and (max-width:1000px){
     
   /* POUR LES TACHE  */
@@ -111,6 +112,24 @@ h1{
 
     .update{
       width:35vw;
+    }
+
+}
+/* GRAND ECRAN */
+@media screen and (min-width:1001px) and (max-width:1300px){
+    
+  /* POUR LES TACHE  */
+    .tasks{
+      width:30vw;
+    }
+
+    /* POUR LES BOUTON  */
+    #root ul li button{
+      width:15vw;
+    }
+
+    .update{
+      width:25vw;
     }
 
 }
