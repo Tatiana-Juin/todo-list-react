@@ -25,7 +25,7 @@ function App() {
       e.preventDefault();
       // Pour inserer dans le tableau la valeur saisie si elle n'est pas vide 
       if(dataValue.trim() !=""){
-        // Ajouter une valeur au tableau
+        // Ajouter une valeur au tableau en utilisant le destructuring
         setTasks(tasks => [
           ...tasks,
           {id: tasks.length+1, name: dataValue}
@@ -71,7 +71,7 @@ function App() {
     setTasks(updatedTask);
     setTaskId(null);
   }
-
+  // return de la fonction App()
     return (
       <>
       {/* Titre de la page  */}

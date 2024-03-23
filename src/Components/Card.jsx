@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useState } from 'react';
 
 export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTaskModify,taskId,taskNameEditing,setTaskNameEditing}) {
@@ -12,7 +11,7 @@ export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTa
               data=>
               <li key={data.id}>
                {/* 
-                    Condition pour l'apparition du input et des bouton modifier et supprimer 
+                    Condition  pour l'apparition du input et des bouton modifier et supprimer 
                     Si taskId est egale a data.id 
                */}
                 {taskId === data.id ? (
@@ -24,7 +23,7 @@ export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTa
                   </>
                 ) : (  // sinon
                   <>
-                  {/* Nom de la tache et bouton modifier et supprimer  */}
+                  {/* Nom de la tache et bouton modifier et supprimer */}
                     {data.name} 
                     {/* <br /> */}
                     <button onClick={() => handleEdtingTask(data.id,data.name) }>Modifier</button> 
