@@ -5,25 +5,25 @@ export default function CardData({datas, onDeleteTask, handleEdtingTask,handleTa
  
   return (
     <div className='tasks'>
-    {/* Afficher tous les élements du tableau ainsi que le bouton modifier et supprimer */}
+    {/* AFFICHER TOUS LES ELEMENTS DU TABLEAI AINSI QUE LE BOUTON MODIFIER ET SUPPRIMER  */}
         <ul>
             {datas.map(
               data=>
               <li key={data.id}>
                {/* 
-                    Condition  pour l'apparition du input et des bouton modifier et supprimer 
+                    CONDITION POUR L'APPARITION DE INPUT ET DES BOUTON MODIFIER ET SUPPRIMER 
                     Si taskId est egale a data.id 
                */}
                 {taskId === data.id ? (
                   <>
-                    {/* Apparition de input avec la valeur actuel et le bouton pour enregistrer les modification */}
+                    {/* APPARITION DE INPUT AVEC LA VALEUR ACTUELLE ET LE BOUTON POUR MODIFIER LA TACHE  */}
                     <input type="text" value={taskNameEditing} onChange={(e) => setTaskNameEditing(e.target.value) }  className='update'/>
                     {/* <br /> */}
                     <button onClick={() => handleTaskModify(data.id)}>Modifier</button>
                   </>
-                ) : (  // sinon
+                ) : (  // SINON
                   <>
-                  {/* Nom de la tache et bouton modifier et supprimer */}
+                  {/* NOM DE LA TACHE ET BOUTON MODIFIER ET SUPPRIMER*/}
                     {data.name} 
                     {/* <br /> */}
                     <button onClick={() => handleEdtingTask(data.id,data.name) }>Modifier</button> 

@@ -15,12 +15,12 @@ function App() {
     // Pour modifier la valeur du champs
     const [taskNameEditing, setTaskNameEditing] = useState('');
 
-    // Function pour récupérer la valeur saisie 
+    // FUNCTION POUR RECUPERER LA VALEUR SAISIE PAR L'UTILISATEUR 
     function handleValue(e){
       setDataValue(e.target.value);
     }
     
-    //Fonction pour  ajouter dans le tableau lavaleur récupérer
+    //FONCTION POUR AJOUTER DANS LE TABLEAU LA TACHE 
     function handleTask(e){
       e.preventDefault();
       // Pour inserer dans le tableau la valeur saisie si elle n'est pas vide 
@@ -36,20 +36,28 @@ function App() {
     }
 
 
-    // Fonction pour supprimer une tache 
+    // FONCTION POUR SUPPRIMER UNE TACHE
     const handleDeleteTask = (id) => {
+      /* 
+          On  créer la copy (filter) d'un tableau ou il a tous les elements sauf celui supprimer 
+          on copy tous les element du tableau SAUF celui qui à 'id' de la tache que l'on veut supprimer . Ce qui fait que la tache est supprimer .
+      */
       const updatedTasks = tasks.filter(task => task.id !== id);
       setTasks(updatedTasks);
   };
-    
-  // Fonction pour récuperer id et le nom de la tache 
+  
+  /* 
+      POUR LA MODIFICATION DE LA TACHE
+      
+      Fonction pour récuperer id et le nom de la tache 
+  */
   const handleEdtingTask = (id, name) => {
     setTaskId(id);
     setTaskNameEditing(name);
 
   }
 
-  // Fonction pour modifier la tache et l'ajouter au tableau 
+  // FONCTION POUR MODIFIER LA TACHE ET L'AJOUTER AU TABLEAU
   const handleTaskModify = () =>{
     var updatedTask = tasks.map(
       task =>{
@@ -71,18 +79,19 @@ function App() {
     setTasks(updatedTask);
     setTaskId(null);
   }
-  // return de la fonction App()
+  
     return (
       <>
-      {/* Titre de la page  */}
+      {/* TITRE DE LA PAGE   */}
         <h1>Todo list </h1>
-        {/* Pour afficher le formulaire */}
+
+        {/* FORMULAIRE */}
         <form >
             <input type="text" onChange={handleValue}  />
             <button onClick={handleTask}>Ajouter une tache</button>
         </form>
         
-        {/* Appelle du composant CardData avec différents props */}
+        {/* APPELLER DU COMPOSANT CardData AVEC CES DIFFERENTS PROPS */}
         <CardData 
           datas={tasks} 
           onDeleteTask={handleDeleteTask}
