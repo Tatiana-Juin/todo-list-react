@@ -20,6 +20,29 @@ function App() {
       setDataValue(e.target.value);
     }
     
+    // POUR CREER UN IDENTIFIANT UNIQUE 
+    let lastId = 0;
+    // récupére le timestamp au moment de l'execution de la ligne de code 
+    let lastTime = Date.now();
+
+    function createUniqueId() {
+      // recupère le timestamp au moment de l'execution de la fonction
+      const now = Date.now();
+
+      // S'il y  a 2 timestamp identique alors 
+      if (now === lastTime) {
+        // incremente de 1
+        lastId += 1;
+      } else {
+        lastId = 0;
+        lastTime = now;
+      }
+      // retourne le timetamp - la valeur lastid
+      return `${now}-${lastId}`;
+}
+
+  
+
     //FONCTION POUR AJOUTER DANS LE TABLEAU LA TACHE 
     function handleTask(e){
       e.preventDefault();
@@ -28,7 +51,7 @@ function App() {
         // Ajouter une valeur au tableau en utilisant le destructuring
         setTasks(tasks => [
           ...tasks,
-          {id: tasks.length+1, name: dataValue}
+          {id: createUniqueId(), name: dataValue}
         ]);
         // setDataValue('');
       }
